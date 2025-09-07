@@ -116,3 +116,5 @@ console.log(tinderUser.hasOwnProperty("age")); // true
 Object.freeze(tinderUser);
 tinderUser.age = 23; // it will not change the age because the object is frozen
 console.log(tinderUser.age); // 22
+
+
