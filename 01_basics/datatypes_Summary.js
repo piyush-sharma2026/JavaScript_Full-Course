@@ -77,3 +77,32 @@ console.log(typeof myObj);  // object
 
 
 
+//********************************************************************//
+/*
+Stack and Heap
+*/
+
+// Stack-->(Primitive) 
+// Heap--->(Non-Primitive)
+
+let myName = "Piyush";
+let anotherName = myName;
+
+anotherName = "Sharma";
+
+console.log(myName); // Piyush
+console.log(anotherName); // Sharma
+
+
+let userOne = {
+    email:"user@google.com",
+    upi: "user@ybl",
+}
+
+let userTwo = userOne;
+
+userTwo.email = "user@hitesh.com";
+
+console.log(userOne.email); // user@hitesh.com
+console.log(userTwo.email); // user@hitesh.com
+
