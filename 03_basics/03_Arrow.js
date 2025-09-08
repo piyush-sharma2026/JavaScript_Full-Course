@@ -76,3 +76,7 @@ console.log(addTwo(5, 10));
 
 const nameofEmployee = (empname) => ("Employee name is " + empname); // if there is only one line of code then we can remove the curly braces and return keyword
 console.log(nameofEmployee("Sakshi"));
+
+
+const myArray = [1,2,3,4];
+myArray.forEach((number) => console.log(number)); // Arrow function in forEach loop
