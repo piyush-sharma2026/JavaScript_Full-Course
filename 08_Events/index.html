@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7x0ufA0WCWVKlkqatnpTGWXguPfKux8Tp-g&s"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="japan"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_YrQd4WrpEL2gOjEJZHpuqGpC1VxadN5KrQ&s"
+                    alt=""></li>
+            <li><img width="200px" id="river"
+                    src="https://media.istockphoto.com/id/1032239930/photo/a-river-runs-through-glacier-national-park-in-montana.jpg?s=612x612&w=0&k=20&c=3in3D6-SU7CKXnzuTXhQvaKr9h5GSxuRWehbAI6p8dM="
+                    alt="">
+                <!-- <li><img width="200px" id="owl"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLitewS7J96Qbw9cQOupauU-PFBUgE-NUthw&s"
+                    alt="" onclick="alert('owl')"></li> -->
+            <li><img width="200px" id="owl"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLitewS7J96Qbw9cQOupauU-PFBUgE-NUthw&s"
+                    alt=""></li>
+            <li><img width="200px" id="prayer"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1XurRlPRY2y8UywzziRE1BU0Lu64mnUkUkg&s"
+                    alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    // WAY 1
+
+    // document.getElementById('owl').onclick = function () {
+    //alert('owl clicked');
+    //} 
+
+    // WAY 2
+
+    //document.getElementById('owl').addEventListener('click', function () { // we can write third parameter false or not because that is default 
+    //alert('owl clicked again');
+    // }, false)
+
+
+
+
+    /*********************
+   // attachEvent()
+   //jQuery - onEventListener
+   **************************/
+
+
+
+
+    //EVENT OBJECT for example e
+
+    //document.getElementById('owl').addEventListener('click', function (e) { // we can write third parameter false or not because that is default 
+    //console.log(e); // you will get many events in broswer
+    // })
+
+
+
+    // Type, timestamp, defaultPrevented, target, toElement,srcElement, currentTarget
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keycode
+
+
+
+    // EVENT PROPAGATION..
+
+    document.getElementById('images').addEventListener('click', function (e) { // we can write third parameter false or not because that is default 
+        console.log("Clicked inside the ul"); // WHEN WE WIIL CLICKED ANY IMAGES INSIDE THE UL
+    }, false);
+
+    document.getElementById('owl').addEventListener('click', function (e) { // we can write third parameter false or not because that is default 
+        console.log("owl clicked"); // WHEN WE WILL CLIKCED ON THE OWL
+    }, false);
+
+    // IF WE WRITE true THEN IT WILL BE CAPTURING LIKE FIRST "clicked inside ul" then "owl clicked"
+    // IF WE WRITE false THEN IT WILL BE BUBBLING LIKE FIRST "owl clicked" then "clicked inside the ul"
+
+
+    // To stop happening this all bubble and capturing we do // e.stopPropagation();
+
+    document.getElementById('Googgle').addEventListener('click', function (e) {
+        console.log('google clicked');
+        e.preventDefault();
+        e.stopPropagation();
+        console.log("google clicked");
+
+    }, false)
+
+    document.querySelector('#images').addEventListener('click', function (e) {
+        console.log(e);
+    }, false);
+
+
+
+</script>
+
+</html>
+/*
+Mostly used events are:
+
+click
+
+mouseover
+
+mouseout
+
+keydown
+
+keyup
+
+submit
+
+change
+
+input
+
+focus
+
+blur
+
+load
+
+scroll
+*/
