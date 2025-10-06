@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <h1>Piyush is working with JS</h1>
+    <button id="Start">Start</button>
+    <button id="Stop">Stop</button>
+</body>
+
+<script>
+    /*
+    //setInterval: It will run after every given interval of time
+    // It will run forever until we stop it
+
+    setInterval(function () {
+    console.log("I am interval", Date.now());
+     }, 1000);
+
+     */
+
+    // SAME THING WE HAVE JUST WRITTEN IN ANOTHER WAY.....
+
+    /* const sayDate = setInterval(function () {
+         console.log("I am interval", Date.now());
+     }, 1000);
+
+     setInterval(sayDate, 1000, "Hello"); // we can pass parameters also in setInterval function
+     */
+
+    //const intervalId = setInterval(sayDate, 1000);
+    //clearInterval: It will stop the execution of setInterval function
+    //clearInterval(intervalId);
+
+
+    document.querySelector('#Start').addEventListener('click', function () {
+        const start = console.log("You have started the execution");
+        setInterval(start, 1000);
+
+    });
+
+    document.querySelector('#Stop').addEventListener('click', function () {
+        clearInterval(start);
+        console.log("You have stopped the execution");
+    });
+
+
+</script>
+
+</html>

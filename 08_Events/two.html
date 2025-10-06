@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <h1>Piyush is working with JS</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+
+    /*
+        // setTimeout: It will run only once after the given interval of time
+    
+        setTimeout(function () {
+            console.log("Piyush how are you?")
+        }, 2000);
+    
+    */
+
+    setTimeout(function () {
+        console.log("Piyush how are you?")
+    }, 2000);
+
+    // document.querySelector('h1').innerHTML = "Piyush is great";
+
+    const changeText = setTimeout(function () {
+        document.querySelector('h1').innerHTML = "Piyush is great";
+    }, 2000);
+
+    setTimeout(changeText, 2000);
+
+    // clearTimeout: It will stop the execution of setTimeout function
+    const changeMe = setTimeout(changeText, 2000);
+
+    // clearTimout(changeMe);
+
+
+    /*
+        //setInterval: It will run after every given interval of time
+        // It will run forever until we stop it
+    
+        let int = setInterval(function () {
+            console.log("I am interval");
+        }, 1000);
+    */
+
+
+    document.querySelector('#stop').addEventListener('click', function () {
+        clearTimeout(changeMe);
+        console.log("You have stopped the execution");
+    });
+
+</script>
+
+</html>
